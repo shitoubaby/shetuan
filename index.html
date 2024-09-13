@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>JavaScript over Network</title>
-</head>
-<body>
- 
-<script>
-    $task.fetch($request).then($response => {
+
+$task.fetch($request).then($response => {
     if( $response.headers['Transfer-Encoding'] === 'chunked' ) {
         delete $response.headers['Transfer-Encoding']
     }
@@ -21,8 +13,4 @@
     } else {
         $done($response)
     }
-})
-</script>
- 
-</body>
-</html>
+}
